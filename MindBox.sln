@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindBox.Console", "MindBox.Console\MindBox.Console.csproj", "{15402B96-3A3D-49A9-971C-59738A02C463}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindBox.Core", "MindBox.Core\MindBox.Core.csproj", "{7A32201B-60EE-4919-B95C-2501B3FBDDB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindBox.UnitTests", "MindBox.UnitTests\MindBox.UnitTests.csproj", "{CE74E28B-BC9D-4D0D-89F6-4B926A568AF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{15402B96-3A3D-49A9-971C-59738A02C463}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15402B96-3A3D-49A9-971C-59738A02C463}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15402B96-3A3D-49A9-971C-59738A02C463}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A32201B-60EE-4919-B95C-2501B3FBDDB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A32201B-60EE-4919-B95C-2501B3FBDDB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A32201B-60EE-4919-B95C-2501B3FBDDB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A32201B-60EE-4919-B95C-2501B3FBDDB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE74E28B-BC9D-4D0D-89F6-4B926A568AF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE74E28B-BC9D-4D0D-89F6-4B926A568AF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE74E28B-BC9D-4D0D-89F6-4B926A568AF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE74E28B-BC9D-4D0D-89F6-4B926A568AF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
