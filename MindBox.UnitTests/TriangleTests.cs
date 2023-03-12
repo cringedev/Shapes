@@ -25,7 +25,7 @@ public class TriangleTests
         // Assert
         Assert.AreEqual(expectedArea, area, Delta);
     }
-    
+
     [Test]
     [TestCase(Triangle.MinSide)]
     [TestCase(Triangle.MaxSide)]
@@ -34,7 +34,7 @@ public class TriangleTests
         // Act & Assert
         Assert.DoesNotThrow(() => new Triangle(side, side, side));
     }
-    
+
     [Test]
     [TestCase(3, 4, 5)]
     [TestCase(1.2, 1.8, 2.1)]
@@ -50,7 +50,17 @@ public class TriangleTests
         Assert.AreEqual(b, triangle.SideB);
         Assert.AreEqual(c, triangle.SideC);
     }
-    
+
+    [Test]
+    [TestCase(3, 1, 1)]
+    [TestCase(1, 3, 1)]
+    [TestCase(1, 1, 3)]
+    public void Constructor_ThrowsArgumentException_ForInvalidTriangleSides(double a, double b, double c)
+    {
+        // Act & Assert
+        Assert.Throws<ArgumentException>(() => new Triangle(a, b, c));
+    }
+
     [Test]
     [TestCase(0.9E-70, 1.0)]
     [TestCase(1.1E+70, 1E+70)]
@@ -65,7 +75,7 @@ public class TriangleTests
         Assert.Throws<ArgumentOutOfRangeException>(() =>
             new Triangle(validSideLength, validSideLength, invalidSideLength));
     }
-    
+
     [Test]
     [TestCase(3, 4, 5, true)]
     [TestCase(5, 12, 13, true)]
