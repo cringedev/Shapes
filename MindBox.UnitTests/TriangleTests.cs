@@ -7,7 +7,7 @@ namespace MindBox.UnitTests;
 public class TriangleTests
 {
     private const double Delta = 0.01;
-    
+
     [Test]
     public void TestCalculateArea()
     {
@@ -36,7 +36,7 @@ public class TriangleTests
         // Assert
         Assert.IsTrue(isRightAngle);
     }
-    
+
     [Test]
     public void TestIsNotRightAngle()
     {
@@ -52,7 +52,7 @@ public class TriangleTests
         // Assert
         Assert.IsFalse(isRightAngle);
     }
-    
+
     [Test]
     public void TestTriangleSides()
     {
@@ -72,12 +72,12 @@ public class TriangleTests
         Assert.AreEqual(sideB, actualSideB);
         Assert.AreEqual(sideC, actualSideC);
     }
-    
+
     [Test]
-    public void Triangle_WithInvalidSideLengths_ThrowsArgumentOutOfRangeException()
+    public void Triangle_WithSmallSideLengths_ThrowsArgumentOutOfRangeException()
     {
         // Arrange
-        double sideA = 1E-71;
+        double sideA = 0.9E-70;
         double sideB = 1.0;
         double sideC = 1.0;
 
@@ -86,7 +86,21 @@ public class TriangleTests
         Assert.Throws<ArgumentOutOfRangeException>(() => new Triangle(sideB, sideA, sideC));
         Assert.Throws<ArgumentOutOfRangeException>(() => new Triangle(sideC, sideB, sideA));
     }
-    
+
+    [Test]
+    public void Triangle_WithBigSideLengths_ThrowsArgumentOutOfRangeException()
+    {
+        // Arrange
+        double sideA = 1.1E+70;
+        double sideB = 1E+70;
+        double sideC = 1E+70;
+
+        // Act & Assert
+        Assert.Throws<ArgumentOutOfRangeException>(() => new Triangle(sideA, sideB, sideC));
+        Assert.Throws<ArgumentOutOfRangeException>(() => new Triangle(sideB, sideA, sideC));
+        Assert.Throws<ArgumentOutOfRangeException>(() => new Triangle(sideC, sideB, sideA));
+    }
+
     [Test]
     public void Triangle_WithMaximumSideLengths_DoesNotThrowException()
     {
@@ -96,7 +110,7 @@ public class TriangleTests
         // Act & Assert
         Assert.DoesNotThrow(() => new Triangle(side, side, side));
     }
-    
+
     [Test]
     public void Triangle_WithMinimumSideLengths_DoesNotThrowException()
     {

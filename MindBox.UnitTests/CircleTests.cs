@@ -8,7 +8,7 @@ namespace MindBox.UnitTests;
 public class CircleTests
 {
     private const double Delta = 0.01;
-    
+
     [Test]
     public void CalculateArea_CircleWithMaxRadius_ReturnsExpectedResult()
     {
@@ -58,7 +58,7 @@ public class CircleTests
         // Act & Assert
         Assert.Throws<ArgumentOutOfRangeException>(() => new Circle(radius));
     }
-    
+
     [Test]
     public void CalculateArea_ReturnsCorrectArea_ForCircleWithRadius_5()
     {
@@ -66,14 +66,14 @@ public class CircleTests
         double radius = 5;
         Circle circle = new Circle(radius);
         double expectedArea = 78.54d;
-        
+
         // Act
         double area = circle.CalculateArea();
 
         // Assert
         Assert.AreEqual(expectedArea, area, Delta);
     }
-    
+
     [Test]
     public void CalculateArea_ReturnsCorrectArea_ForCircleWithRadius_12_5()
     {
@@ -86,9 +86,9 @@ public class CircleTests
         double area = circle.CalculateArea();
 
         // Assert
-        Assert.AreEqual(expectedArea , area, Delta);
+        Assert.AreEqual(expectedArea, area, Delta);
     }
-    
+
     [Test]
     public void TestCircleRadius()
     {

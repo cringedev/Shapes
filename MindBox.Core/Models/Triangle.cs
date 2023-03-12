@@ -6,7 +6,7 @@ public class Triangle : IShape
     // and to prevent side lengths from being too small and approaching zero, which could lead to incorrect results.
     public const double MaxSide = 1E+70;
     public const double MinSide = 1E-70;
-    
+
     public double SideA { get; }
     public double SideB { get; }
     public double SideC { get; }
@@ -17,7 +17,7 @@ public class Triangle : IShape
         {
             throw new ArgumentOutOfRangeException($"Side lengths must be greater than {MinSide}.");
         }
-        
+
         if (sideA > MaxSide || sideB > MaxSide || sideC > MaxSide)
         {
             throw new ArgumentOutOfRangeException($"Side lengths must be greater than {MaxSide}.");
@@ -27,7 +27,7 @@ public class Triangle : IShape
         {
             throw new ArgumentException("The lengths of the sides do not form a triangle.");
         }
-        
+
         SideA = sideA;
         SideB = sideB;
         SideC = sideC;
@@ -41,7 +41,7 @@ public class Triangle : IShape
 
     public bool IsRightAngle()
     {
-        double[] sides = { SideA, SideB, SideC };
+        double[] sides = {SideA, SideB, SideC};
         Array.Sort(sides);
 
         return Math.Pow(sides[0], 2) + Math.Pow(sides[1], 2) == Math.Pow(sides[2], 2);
