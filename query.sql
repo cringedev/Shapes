@@ -6,6 +6,11 @@ LEFT JOIN Categories ON ProductCategories.CategoryID = Categories.ID
 
 -- --queries for preparing test data
 
+-- CREATE TABLE Categories (
+--     Id INT PRIMARY KEY,
+--     CategoryName NVARCHAR(50)
+-- );
+
 -- CREATE TABLE Products (
 --     Id INT PRIMARY KEY,
 --     Name NVARCHAR(50)
