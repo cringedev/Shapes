@@ -20,7 +20,7 @@ public class Triangle : IShape
 
         if (sideA > MaxSide || sideB > MaxSide || sideC > MaxSide)
         {
-            throw new ArgumentOutOfRangeException($"Side lengths must be greater than {MaxSide}.");
+            throw new ArgumentOutOfRangeException($"Side lengths must be less than {MaxSide}.");
         }
 
         if (sideA + sideB <= sideC || sideA + sideC <= sideB || sideB + sideC <= sideA)
